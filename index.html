@@ -1,12 +1,62 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>text</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <!--    <link rel="stylesheet" href="./node_modules/animate.css/animate.css">-->
+    <script src="./node_modules/velocity-animate/velocity.js"></script>
+    <style>
+        .fuck-enter, .fuck-leave-to {
+            opacity: 0;
+        }
+
+        .fuck-enter-active, .fuck-leave-active {
+            transition: opacity 3s;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <transition name="fuck" @before-enter="handleBeforeEnter" @enter="handleEnter" @after-enter="handleAfterEnter">
+        <div v-if="show">hello world</div>
+    </transition>
+    <button @click="handleClick">切换</button>
+</div>
+<!--<div id="root">
+    <transition type="transition" appear name="fuck" enter-active-class="animated swing" leave-active-class="animated shake" appear-active-class="animated swing">
+        <div v-if="show">hello world</div>
+    </transition>
+    <button @click="handleClick">切换</button>
+</div>-->
+<!-- built files will be auto injected -->
+</body>
+<script>
+    let vm = new Vue({
+        el: '#root',
+        data: {
+            show: true,
+        },
+        methods: {
+            handleClick: function () {
+                this.show = !this.show;
+            },
+            handleBeforeEnter: function (el) {
+                el.style.color = 'red';
+            },
+            handleEnter: function (el, done) {
+                setTimeout(() => {
+                    el.style.color = 'green';
+                    done();
+                }, 1000);
+            },
+            handleAfterEnter: function (el) {
+                setTimeout(() => {
+                    el.style.color = 'black';
+                }, 1000);
+            },
+        },
+    })
+</script>
 </html>
