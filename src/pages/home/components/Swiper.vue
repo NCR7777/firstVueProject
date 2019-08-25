@@ -16,6 +16,10 @@ export default {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
+        autoplay: 4000,
+        autoplayDisableOnInteraction: false,
+        mousewheelControl: true,
+        observeParents: true,
         loop: true
       },
       swiperList: [{
@@ -32,7 +36,7 @@ export default {
 
 <style lang="stylus" scoped>
   .wrapper >>> .swiper-pagination-bullet-active
-      background: #fff
+    background: #fff
   .wrapper
     overflow: hidden
     width: 100%
