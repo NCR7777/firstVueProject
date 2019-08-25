@@ -21,6 +21,7 @@
     "stylus-loader": "^3.0.2",
     "velocity-animate": "^1.5.2",
     "vue": "^2.5.2",
+    "vue-awesome-swiper": "^2.6.7",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
