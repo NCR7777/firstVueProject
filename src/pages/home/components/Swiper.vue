@@ -28,6 +28,18 @@ export default {
       }, {
         id: '0002',
         imgUrl: '/static/index-swiper2.jpg'
+      }, {
+        id: '0003',
+        imgUrl: '/static/index-swiper3.jpg'
+      }, {
+        id: '0004',
+        imgUrl: '/static/index-swiper4.jpg'
+      }, {
+        id: '0005',
+        imgUrl: '/static/index-swiper4.jpg'
+      }, {
+        id: '0006',
+        imgUrl: '/static/index-swiper6.jpg'
       }]
     }
   }
@@ -41,7 +53,7 @@ export default {
     overflow: hidden
     width: 100%
     height: 0
-    padding-bottom: 58.67%
+    padding-bottom: 26.67%
     background: #eee
     .swiper-img
       width: 100%

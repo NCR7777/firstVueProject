@@ -1,9 +1,16 @@
 <template>
   <div class="icons">
-    <div class="icon" v-for="item of iconList" :key="item.id">
-      <span :class="[item.type,'icon-img']"></span>
-      <p class="icon-desc">{{item.desc}}</p>
-    </div>
+    <swiper :options="swiperOption">
+      <swiper-slide v-for="(page, index) of pages" :key="index">
+        <div class="icon" v-for="item of page" :key="item.id">
+          <div class="icon-img">
+            <img class="icon-img-content" :src="item.imgUrl" alt="">
+          </div>
+          <p class="icon-desc">{{item.desc}}</p>
+        </div>
+      </swiper-slide>
+      <div class="swiper-pagination"  slot="pagination"></div>
+    </swiper>
   </div>
 </template>
 
@@ -12,39 +19,65 @@ export default {
   name: 'HomeIcons',
   data () {
     return {
+      swiperOption: {
+        pagination: '.swiper-pagination',
+        mousewheelControl: true,
+        observeParents: true
+      },
       iconList: [{
         id: '0001',
-        type: 'T1st',
-        desc: '签证·WiFi'
+        desc: '景点门票',
+        imgUrl: '/static/index-icons/index-icon-1.png'
       }, {
         id: '0002',
-        type: 'T2nd',
-        desc: '出境游'
+        desc: '深圳必游',
+        imgUrl: '/static/index-icons/index-icon-2.png'
       }, {
         id: '0003',
-        type: 'T3rd',
-        desc: '一日游'
+        desc: '暑期夜场',
+        imgUrl: '/static/index-icons/index-icon-3.png'
       }, {
         id: '0004',
-        type: 'T4th',
-        desc: '美食林'
+        desc: '海洋馆',
+        imgUrl: '/static/index-icons/index-icon-4.png'
       }, {
         id: '0005',
-        type: 'T5th',
-        desc: '汽车票'
+        desc: '一日游',
+        imgUrl: '/static/index-icons/index-icon-5.png'
       }, {
         id: '0006',
-        type: 'T6th',
-        desc: '邮轮游'
+        desc: '深圳动物园',
+        imgUrl: '/static/index-icons/index-icon-6.png'
       }, {
         id: '0007',
-        type: 'T7th',
-        desc: '超级巴士'
+        desc: '世界之窗',
+        imgUrl: '/static/index-icons/index-icon-7.png'
       }, {
         id: '0008',
-        type: 'T8th',
-        desc: '攻略'
+        desc: '东部华侨城',
+        imgUrl: '/static/index-icons/index-icon-8.png'
+      }, {
+        id: '0009',
+        desc: '水上玩乐',
+        imgUrl: '/static/index-icons/index-icon-9.png'
+      }, {
+        id: '0010',
+        desc: '玩转长隆',
+        imgUrl: '/static/index-icons/index-icon-10.png'
       }]
+    }
+  },
+  computed: {
+    pages () {
+      const pages = []
+      this.iconList.forEach((item, index) => {
+        const page = Math.floor(index / 8)
+        if (!pages[page]) {
+          pages[page] = []
+        }
+        pages[page].push(item)
+      })
+      return pages
     }
   }
 }
@@ -53,47 +86,39 @@ export default {
 <style lang="stylus" scoped>
   @import '~styles/varibles'
   @import '~styles/mixins'
-  .icons
+  .icons >>> .swiper-container
+    height: 0
+    padding-bottom: 54%
+  .icons >>> .swiper-pagination
+    position: absolute
+    bottom: 0
+  .icon
+    position: relative
     overflow: hidden
-    margin-left: 5%
-    margin-right: 5%
-    .icon
-      overflow: hidden
-      float: left
-      width:25%
-      padding-top: 2%
-      margin-bottom: 2%
+    float: left
+    width: 25%
+    height: 0
+    padding-bottom: 25%
+    .icon-img
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: .44rem
+      box-sizing: border-box
+      padding: .1rem
+      .icon-img-content
+        display: block
+        margin: 0 auto
+        height: 100%
+    .icon-desc
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 0
+      height: .44rem
+      line-height: .44rem
       text-align: center
-      .icon-img
-        display:inline-block
-        width: 33px
-        height: 33px
-        margin: 0 auto;
-        background: url(/static/index-icons-backgroud.png) no-repeat
-        background-size: 374px 130px
-      .T1st
-        background-position: -35px -12px
-      .T2nd
-        background-position: -124px -12px
-      .T3rd
-        background-position: -212px -12px
-      .T4th
-        background-position: -298px -79px
-      .T5th
-        background-position: -35px -79px
-      .T6th
-        background: url(/static/index-icons-backgroud-alone.png) no-repeat
-        background-size: 27px 27px
-        background-position: 3px 6px
-      .T7th
-        background-position: -212px -79px
-      .T8th
-        background-position: -298px -12px
-      .icon-desc
-        margin-top: .1rem
-        line-height: .44rem
-        height: .44rem
-        box-sizing: border-box
-        color: $darkTextColor
-        ellipsis()
+      color: $darkTextColor
+      ellipsis()
 </style>

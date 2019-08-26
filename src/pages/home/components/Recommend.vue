@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    热销推荐
   </div>
 </template>
 
@@ -8,9 +8,7 @@
 export default {
   name: 'HomeRecommend',
   data () {
-    return {
-
-    }
+    return {}
   }
 }
 </script>
