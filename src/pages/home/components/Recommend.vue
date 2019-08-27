@@ -2,7 +2,7 @@
   <div>
     <div class="title"><span class="iconfont guess-like">&#xe85c;</span>猜你喜欢</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
           <img class="item-img" :src="item.imgUrl" :alt="item.title">
         <div class="item-info">
             <p class="item-title">{{item.title}}</p>
@@ -27,45 +27,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: '/static/index-recommend/user-like/user-like1.jpg',
-        title: '深圳小梅沙海洋世界',
-        commitNum: '9999',
-        price: '149',
-        address: '小梅沙'
-      }, {
-        id: '0002',
-        imgUrl: '/static/index-recommend/user-like/user-like1.jpg',
-        title: '深圳小梅沙海洋世界',
-        commitNum: '9999',
-        price: '149',
-        address: '小梅沙'
-      }, {
-        id: '0003',
-        imgUrl: '/static/index-recommend/user-like/user-like1.jpg',
-        title: '深圳小梅沙海洋世界',
-        commitNum: '9999',
-        price: '149',
-        address: '小梅沙'
-      }, {
-        id: '0004',
-        imgUrl: '/static/index-recommend/user-like/user-like1.jpg',
-        title: '深圳小梅沙海洋世界',
-        commitNum: '9999',
-        price: '149',
-        address: '小梅沙'
-      }, {
-        id: '0005',
-        imgUrl: '/static/index-recommend/user-like/user-like1.jpg',
-        title: '深圳小梅沙海洋世界',
-        commitNum: '9999',
-        price: '149',
-        address: '小梅沙'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>

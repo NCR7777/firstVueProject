@@ -17,60 +17,22 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
         mousewheelControl: true,
         observeParents: true
-      },
-      iconList: [{
-        id: '0001',
-        desc: '景点门票',
-        imgUrl: '/static/index-icons/index-icon-1.png'
-      }, {
-        id: '0002',
-        desc: '深圳必游',
-        imgUrl: '/static/index-icons/index-icon-2.png'
-      }, {
-        id: '0003',
-        desc: '暑期夜场',
-        imgUrl: '/static/index-icons/index-icon-3.png'
-      }, {
-        id: '0004',
-        desc: '海洋馆',
-        imgUrl: '/static/index-icons/index-icon-4.png'
-      }, {
-        id: '0005',
-        desc: '一日游',
-        imgUrl: '/static/index-icons/index-icon-5.png'
-      }, {
-        id: '0006',
-        desc: '深圳动物园',
-        imgUrl: '/static/index-icons/index-icon-6.png'
-      }, {
-        id: '0007',
-        desc: '世界之窗',
-        imgUrl: '/static/index-icons/index-icon-7.png'
-      }, {
-        id: '0008',
-        desc: '东部华侨城',
-        imgUrl: '/static/index-icons/index-icon-8.png'
-      }, {
-        id: '0009',
-        desc: '水上玩乐',
-        imgUrl: '/static/index-icons/index-icon-9.png'
-      }, {
-        id: '0010',
-        desc: '玩转长隆',
-        imgUrl: '/static/index-icons/index-icon-10.png'
-      }]
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
