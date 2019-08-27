@@ -110,7 +110,8 @@ export default {
       .icon-img-content
         display: block
         margin: 0 auto
-        height: 100%
+        padding-top: 10%
+        height: 90%
     .icon-desc
       position: absolute
       left: 0
