@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header-left">
-      <div class="iconfont back-icon">&#xe658;</div>
+      <a href="javascript:"><div class="iconfont back-icon">&#xe658;</div></a>
     </div>
     <div class="header-input">
       <span class="iconfont">&#xe63c;</span>输入城市/景点/游玩主题</div>
@@ -27,6 +27,7 @@ export default {
       float: left
       width: .7rem
       .back-icon
+        color #fff
         padding-left:.1rem
         text-align: center
         font-size: .6rem
