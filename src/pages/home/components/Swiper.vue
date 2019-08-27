@@ -24,22 +24,22 @@ export default {
       },
       swiperList: [{
         id: '0001',
-        imgUrl: '/static/index-swiper1.jpg'
+        imgUrl: '/static/index-swiper/index-swiper1.jpg'
       }, {
         id: '0002',
-        imgUrl: '/static/index-swiper2.jpg'
+        imgUrl: '/static/index-swiper/index-swiper2.jpg'
       }, {
         id: '0003',
-        imgUrl: '/static/index-swiper3.jpg'
+        imgUrl: '/static/index-swiper/index-swiper3.jpg'
       }, {
         id: '0004',
-        imgUrl: '/static/index-swiper4.jpg'
+        imgUrl: '/static/index-swiper/index-swiper4.jpg'
       }, {
         id: '0005',
-        imgUrl: '/static/index-swiper4.jpg'
+        imgUrl: '/static/index-swiper/index-swiper5.jpg'
       }, {
         id: '0006',
-        imgUrl: '/static/index-swiper6.jpg'
+        imgUrl: '/static/index-swiper/index-swiper6.jpg'
       }]
     }
   }
