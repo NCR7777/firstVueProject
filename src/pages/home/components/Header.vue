@@ -1,12 +1,16 @@
 <template>
   <div class="header">
     <div class="header-left">
-      <a href="javascript:"><div class="iconfont back-icon">&#xe658;</div></a>
+      <router-link to="">
+        <div class="iconfont back-icon">&#xe658;</div>
+      </router-link>
     </div>
     <div class="header-input">
       <span class="iconfont">&#xe63c;</span>输入城市/景点/游玩主题</div>
-    <div class="header-right icon-arrow">
-    {{this.city}}<span class="iconfont">&#xe65c;</span></div>
+    <router-link to="/city">
+      <div class="header-right icon-arrow">
+      {{this.city}}<span class="iconfont">&#xe65c;</span></div>
+    </router-link>
   </div>
 </template>
 
@@ -23,7 +27,7 @@ export default {
   @import '~styles/varibles.styl'
   .header
     display: flex
-    line-height: .86rem
+    line-height: $headerHeight
     background: $bgColor
     color: #fff
     .header-left
@@ -48,6 +52,7 @@ export default {
       float: right
       width: 1.24rem
       text-align: center
+      color #fff
       .icon-arrow
         font-size: 1.2em
 </style>

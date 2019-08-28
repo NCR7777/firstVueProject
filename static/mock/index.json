@@ -65,38 +65,38 @@
     "recommendList": [{
       "id": "0001",
       "imgUrl": "/static/index-recommend/user-like/user-like1.jpg",
-      "title": "深圳小梅沙海洋世界",
-      "commitNum": "9999",
-      "price": "149",
-      "address": "小梅沙"
+      "title": "世界之窗",
+      "commitNum": "46396",
+      "price": "69.5",
+      "address": "华侨城"
     }, {
       "id": "0002",
-      "imgUrl": "/static/index-recommend/user-like/user-like1.jpg",
+      "imgUrl": "/static/index-recommend/user-like/user-like2.jpg",
       "title": "深圳小梅沙海洋世界",
-      "commitNum": "9999",
+      "commitNum": "9383",
       "price": "149",
       "address": "小梅沙"
     }, {
       "id": "0003",
-      "imgUrl": "/static/index-recommend/user-like/user-like1.jpg",
-      "title": "深圳小梅沙海洋世界",
-      "commitNum": "9999",
-      "price": "149",
-      "address": "小梅沙"
+      "imgUrl": "/static/index-recommend/user-like/user-like3.jpg",
+      "title": "深圳野生动物园",
+      "commitNum": "20479",
+      "price": "59.3",
+      "address": "南山区"
     }, {
       "id": "0004",
-      "imgUrl": "/static/index-recommend/user-like/user-like1.jpg",
-      "title": "深圳小梅沙海洋世界",
-      "commitNum": "9999",
-      "price": "149",
-      "address": "小梅沙"
+      "imgUrl": "/static/index-recommend/user-like/user-like4.jpg",
+      "title": "深圳欢乐谷",
+      "commitNum": "32392",
+      "price": "85",
+      "address": "南山区"
     }, {
       "id": "0005",
-      "imgUrl": "/static/index-recommend/user-like/user-like1.jpg",
-      "title": "深圳小梅沙海洋世界",
-      "commitNum": "9999",
-      "price": "149",
-      "address": "小梅沙"
+      "imgUrl": "/static/index-recommend/user-like/user-like5.jpg",
+      "title": "海洋奇梦馆",
+      "commitNum": "5115",
+      "price": "60",
+      "address": "欢乐海岸"
     }],
     "weekendList": [{
       "id": "0001",
