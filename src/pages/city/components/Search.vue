@@ -24,7 +24,6 @@ export default {
       height .5rem
       line-height .5rem
       text-align center
-      background $bgGrayColor
       border-radius .06rem
       color #666
 </style>
