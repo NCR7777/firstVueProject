@@ -39,7 +39,7 @@ export default {
   .title
     margin-top .2rem
     line-height .8rem
-    background rgb(245, 245, 245)
+    background $bgGrayColor
     text-indent .2rem
     .guess-like
       line-height .4rem

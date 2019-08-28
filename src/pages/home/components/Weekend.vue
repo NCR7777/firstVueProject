@@ -29,7 +29,7 @@ export default {
   @import "~styles/mixins"
   .title
     line-height .8rem
-    background rgb(245, 245, 245)
+    background $bgGrayColor
     text-indent .2rem
   .item-img-wrapper
     overflow hidden
