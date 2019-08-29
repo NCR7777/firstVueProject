@@ -5,7 +5,7 @@
           <div class="title border-topbottom">当前城市</div>
           <div class="button-list">
             <div class="button-wrapper">
-              <div class="button active">深圳</div>
+              <div class="button active">{{this.$store.state.city}}</div>
             </div>
           </div>
         </div>
@@ -13,7 +13,7 @@
           <div class="title border-topbottom">热门城市</div>
           <div class="button-list">
             <ul>
-              <li class="button-wrapper" v-for="item of hotCities" :key="item.id">
+              <li class="button-wrapper" v-for="item of hotCities" :key="item.id" @click="handleCityClick(item.name)">
                 <div class="button">{{item.name}}</div>
               </li>
             </ul>
@@ -23,7 +23,7 @@
           <div class="title border-topbottom">{{key}}</div>
           <div class="item-list">
             <ul>
-              <li class="item border-bottom" v-for="innerItem of item" :key="innerItem.id">
+              <li class="item border-bottom" v-for="innerItem of item" :key="innerItem.id" @click="handleCityClick(innerItem.name)">
                 <div>{{innerItem.name}}</div>
               </li>
             </ul>
@@ -42,8 +42,11 @@ export default {
     cities: Object,
     letter: String
   },
-  mounted () {
-    this.scroll = new BScroll(this.$refs.wrapper)
+  methods: {
+    handleCityClick (city) {
+      this.$store.commit('changeCity', city)
+      this.$router.push('/')
+    }
   },
   watch: {
     letter () {
@@ -52,6 +55,11 @@ export default {
         this.scroll.scrollToElement(element)
       }
     }
+  },
+  mounted () {
+    this.scroll = new BScroll(this.$refs.wrapper, {
+      click: true
+    })
   }
 }
 </script>

@@ -9,22 +9,20 @@
       <span class="iconfont">&#xe63c;</span>输入城市/景点/游玩主题</div>
     <router-link to="/city">
       <div class="header-right icon-arrow">
-      {{this.city}}<span class="iconfont">&#xe65c;</span></div>
+      {{this.$store.state.city}}<span class="iconfont">&#xe65c;</span></div>
     </router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeHeader',
-  props: {
-    city: String
-  }
+  name: 'HomeHeader'
 }
 </script>
 
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
+  @import '~styles/mixins.styl'
   .header
     display: flex
     line-height: $headerHeight
@@ -53,6 +51,7 @@ export default {
       width: 1.24rem
       text-align: center
       color #fff
+      ellipsis()
       .icon-arrow
         font-size: 1.2em
 </style>
