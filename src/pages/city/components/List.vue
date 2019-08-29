@@ -5,8 +5,8 @@
           <div class="title border-topbottom">当前城市</div>
           <div class="button-list">
             <div class="button-wrapper">
-            <div class="button">深圳</div>
-          </div>
+              <div class="button active">深圳</div>
+            </div>
           </div>
         </div>
         <div class="area">
@@ -91,6 +91,10 @@ export default {
           text-align center
           border .02rem solid #ccc
           border-radius .06rem
+        .active
+          background $bgColor
+          color #fff
+          border .02rem solid $bgColor
     .item-list
       .item
         line-height .76rem
