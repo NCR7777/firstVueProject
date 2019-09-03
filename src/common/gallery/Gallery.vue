@@ -1,9 +1,9 @@
 <template>
     <div class="container" @click="handleGalleryClick">
       <div class="wrapper">
-        <swiper :options="swiperOption">
+        <swiper :options="swiperOption"  v-if="showSwiper">
           <swiper-slide v-for="(item, index) of GalleryImgList" :key="index">
-            <img class="gallery-img" :src="item.imgUrl" :alt="index">
+            <img class="gallery-img" :src="item" :alt="index">
           </swiper-slide>
           <div class="swiper-pagination"  slot="pagination"></div>
         </swiper>
@@ -38,6 +38,11 @@ export default {
     handleGalleryClick () {
       this.$emit('close')
     }
+  },
+  computed: {
+    showSwiper () {
+      return this.GalleryImgList.length
+    }
   }
 }
 </script>
@@ -49,7 +54,7 @@ export default {
     display flex
     flex-direction column
     justify-content center
-    z-index 1
+    z-index 99
     position fixed
     left 0
     right 0

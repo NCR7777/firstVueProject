@@ -5,7 +5,7 @@
       </router-link>
       <div class="header-fixed" v-show="showFixedHeader" :style="opacityStyle">
         <router-link tag="span" to="/" class="iconfont header-fixed-back">&#xe658;</router-link>
-        世界之窗
+        {{this.sightName}}
       </div>
     </div>
 </template>
@@ -13,6 +13,9 @@
 <script>
 export default {
   name: 'DetailHeader',
+  props: {
+    sightName: String
+  },
   data () {
     return {
       showAbsHeader: true,
@@ -26,18 +29,19 @@ export default {
       return !this.showAbsHeader
     },
     handleScroll () {
+      this.showAbsHeader = true
       const scrollTop = document.documentElement.scrollTop
       let opacity = 0
       if (scrollTop > 50) {
         opacity = opacity > 1 ? 1 : (scrollTop - 50) / 60
         this.showAbsHeader = false
-      } else {
-        this.showAbsHeader = true
       }
       this.opacityStyle = { opacity }
     }
   },
   activated () {
+    this.showAbsHeader = true
+    this.opacityStyle = { opacity: 0 }
     window.addEventListener('scroll', this.handleScroll)
   },
   deactivated () {
@@ -63,6 +67,7 @@ export default {
       font-size .6rem
       color rgba(255, 255, 255, .8)
   .header-fixed
+    z-index 2
     position fixed
     top 0
     left 0
