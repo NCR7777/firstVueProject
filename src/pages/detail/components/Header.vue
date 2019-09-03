@@ -29,7 +29,7 @@ export default {
       const scrollTop = document.documentElement.scrollTop
       let opacity = 0
       if (scrollTop > 50) {
-        opacity = opacity > 1 ? 1 : (scrollTop - 50) / 50
+        opacity = opacity > 1 ? 1 : (scrollTop - 50) / 60
         this.showAbsHeader = false
       } else {
         this.showAbsHeader = true
@@ -39,6 +39,9 @@ export default {
   },
   activated () {
     window.addEventListener('scroll', this.handleScroll)
+  },
+  deactivated () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
