@@ -3,6 +3,11 @@
   "data": {
     "hotCities": [
       {
+        "id": 37,
+        "spell": "shenzhen",
+        "name": "深圳"
+      },
+      {
         "id": 1,
         "spell": "beijing",
         "name": "北京"

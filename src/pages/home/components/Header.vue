@@ -8,8 +8,9 @@
     <div class="header-input">
       <span class="iconfont">&#xe63c;</span>输入城市/景点/游玩主题</div>
     <router-link to="/city">
-      <div class="header-right icon-arrow">
-      {{this.$store.state.city}}<span class="iconfont">&#xe65c;</span></div>
+      <div class="header-right">
+        <div class="city">{{this.$store.state.city}}</div><span class="iconfont icon-arrow">&#xe65c;</span>
+      </div>
     </router-link>
   </div>
 </template>
@@ -47,11 +48,15 @@ export default {
       border-radius: .1rem
       color: #999
     .header-right
+      display flex
+      justify-content center
       float: right
       width: 1.24rem
+      height $headerHeight
       text-align: center
       color #fff
-      ellipsis()
+      .city
+        ellipsis()
       .icon-arrow
-        font-size: 1.2em
+        font-size: .32rem
 </style>
