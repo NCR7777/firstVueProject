@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="header border-bottom">
-      <router-link to="/">
-        <div class="iconfont header-back">&#xe658;</div>
-      </router-link>
+        <router-link tag="div" to="/" class="iconfont header-back">&#xe658;</router-link>
       城市选择
     </div>
     <div class="city-address">
@@ -37,7 +35,6 @@ export default {
       left 0
       width .7rem
       font-size: .6rem
-      color #fff
       padding-left:.05rem
   .city-address
     line-height $headerHeight

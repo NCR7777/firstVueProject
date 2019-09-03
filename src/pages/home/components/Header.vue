@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header-left">
-      <router-link to="">
+      <router-link to="/">
         <div class="iconfont back-icon">&#xe658;</div>
       </router-link>
     </div>
