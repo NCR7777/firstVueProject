@@ -2,7 +2,7 @@
   <div>
     <div class="title"><span class="iconfont guess-like">&#xe85c;</span>猜你喜欢</div>
     <ul>
-      <li class="item border-bottom" v-for="item of list" :key="item.id">
+      <router-link tag="li" class="item border-bottom" v-for="item of list" :key="item.id" :to="'/detail/' + item.id">
           <img class="item-img" :src="item.imgUrl" :alt="item.title">
         <div class="item-info">
             <p class="item-title">{{item.title}}</p>
@@ -17,9 +17,8 @@
             <span class="item-price">¥<em class="item-price-num">{{item.price}}</em></span>起
             <span class="item-address">{{item.address}}</span>
           </div>
-
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
