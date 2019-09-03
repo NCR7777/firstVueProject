@@ -4,9 +4,11 @@
         <div class="area">
           <div class="title border-topbottom">当前城市</div>
           <div class="button-list">
-            <div class="button-wrapper">
-              <div class="button active">{{this.currentCity}}</div>
-            </div>
+            <router-link to="/">
+              <div class="button-wrapper">
+                <div class="button active">{{this.currentCity}}</div>
+              </div>
+            </router-link>
           </div>
         </div>
         <div class="area">
