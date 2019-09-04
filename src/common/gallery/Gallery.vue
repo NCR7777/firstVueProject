@@ -1,7 +1,7 @@
 <template>
     <div class="container" @click="handleGalleryClick">
       <div class="wrapper">
-        <swiper :options="swiperOption"  v-if="showSwiper">
+        <swiper :options="swiperOption">
           <swiper-slide v-for="(item, index) of GalleryImgList" :key="index">
             <img class="gallery-img" :src="item" :alt="index">
           </swiper-slide>
@@ -28,9 +28,8 @@ export default {
         pagination: '.swiper-pagination',
         paginationType: 'fraction',
         mousewheelControl: true,
-        observeParents: true,
         observer: true,
-        loop: true
+        observeParents: true
       }
     }
   },

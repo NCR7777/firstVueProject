@@ -17,7 +17,6 @@ export default {
   name: 'Detail',
   data () {
     return {
-      id: '',
       sightName: '',
       categoryList: [],
       galleryImages: [],
@@ -48,17 +47,25 @@ export default {
               this.sightName = data.sightName
               this.categoryList = data.categoryList
               this.galleryImages = data.galleryImages
-              this.galleryImagesCount = data.galleryImagesCount
               this.bannerImage = data.bannerImage
               throw new Error('updateData')
             }
           })
         } catch (e) {}
       }
+    },
+    resetDetailInfo () {
+      this.sightName = ''
+      this.categoryList = []
+      this.galleryImages = []
+      this.bannerImage = ''
     }
   },
   activated () {
     this.getDetailInfo()
+  },
+  deactivated () {
+    this.resetDetailInfo()
   }
 }
 </script>
